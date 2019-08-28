@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Populacao {
 
     public final ArrayList<Individuo> individuos;
-    Individuo indi;
+
 
     public Populacao() {
         individuos = new ArrayList<>();
@@ -34,7 +34,6 @@ public class Populacao {
     // coloca um individuo na proxima posicao disponivel da populacao
     public void setIndividuo(Individuo individuo) {
         individuos.add(individuo);
-
     }
 
     public void setIndividuos(ArrayList<Individuo> filhos) {
@@ -46,9 +45,5 @@ public class Populacao {
     public int getNumIndividuos() {
         return individuos.size();
     }
-
-
-
-
 
 }

@@ -18,13 +18,13 @@ public class Individuo implements Comparable<Individuo> {
 
      private int[] individuo;
     //nosso cromossomo precisa do  valor e o peso de cada um dos GENES a serem carregados
-    private double pesos[]={1,2,1,12,4};
-    private double valores[]={1,2,2,4,10};
+    private double pesos[]={5,2,1,12,4};
+    private double valores[]={1,2,2,4,1};
     //o limite de peso que nossa mochila pode carregar
-    private double limitePeso=15;
+    private double limitePeso=20;
 
     public Individuo() {
-         individuo = new int[5];
+         individuo = new int[pesos.length];
         do{
             this.setIndividuo(individuo);
         } while (!validar());
@@ -40,14 +40,15 @@ public class Individuo implements Comparable<Individuo> {
             int posAleatoria = random.nextInt(individuo.length);
             mutacao(posAleatoria);
         }
+        avaliar();
 
     }
 
     public void avaliar() {
-        aptidao = -1.0;
+        aptidao = 0.0;
          for (int i = 0; i < individuo.length; i++) {
            if(individuo[i]==1)
-               aptidao+=valores[i];
+               aptidao += valores[i];
        }         
     }
     
@@ -65,7 +66,6 @@ public class Individuo implements Comparable<Individuo> {
        }
         return  soma <= limitePeso;
     }
-   
    
    private void mutacao(int posicao) {
         do {

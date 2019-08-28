@@ -13,8 +13,8 @@ public class Genetico {
     static final boolean ESTAGNA = true; //se controla ou nao a estagnacao
     static final double VALORESTAGNA = 200; //valor da estagnacao maxima
 
-    static final int TAMANHODAPOPULACAO = 400;
-    static final int MAXIMODEGERACOES = 1000;
+    static final int TAMANHODAPOPULACAO = 100;
+    static final int MAXIMODEGERACOES = 200;
 
     private Populacao populacao;
     private final Random r;
@@ -36,7 +36,6 @@ public class Genetico {
         do {
 
             populacao = gerarPopulacao();
-
             System.out.println("Geracao " + geracao + "| Melhor " + populacao.getIndividuo(0));
 
             if (ESTAGNA) {
@@ -152,19 +151,15 @@ public class Genetico {
         if (r.nextDouble() <= TAXADECRUZAMENTO) {
 
             // se tiver mais genes, adapta os pontos de corte
-            int value = r.nextInt(5);
-            value += 1;
-
-            System.arraycopy(pai0, 0, filho0, 0, value);
-            System.arraycopy(pai0, value, filho1, value, 8-value);
-            System.arraycopy(pai1, 0, filho1, 0, value);
-            System.arraycopy(pai1, value, filho0, value, 8-value);
+            int value = pai0.length;
+            System.arraycopy(pai0, 0, filho0, 0, value/2);
+            System.arraycopy(pai0, value/2, filho1, value/2, value-value/2);
+            System.arraycopy(pai1, 0, filho1, 0, value/2);
+            System.arraycopy(pai1, value/2, filho0, value/2, value-value/2);
 
         } else {
-
             filho0 = pai0;
             filho1 = pai1;
-
         }
 
         ArrayList<Individuo> filhos = new ArrayList<>();
@@ -176,8 +171,8 @@ public class Genetico {
     }
 
     private void contaEstagnacao() {
-        if (melhorAptidaoAnterior == -1 || populacao.indi.getAptidao() != melhorAptidaoAnterior) {
-            melhorAptidaoAnterior = populacao.indi.getAptidao();
+        if (melhorAptidaoAnterior == -1 || populacao.getIndividuo(0).getAptidao() != melhorAptidaoAnterior) {
+            melhorAptidaoAnterior = populacao.getIndividuo(0).getAptidao();
             contEstagnar = 1;
 
         } else {
