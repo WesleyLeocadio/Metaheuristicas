@@ -1,54 +1,75 @@
 package ag;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*representação do nosso cromossomo será uma string de bits na qual a
 posição i ser igual a 1 representa o fato de que o objeto de número i será colocado
 dentro da mochila.
 
  */
-public class Individuo {
+public class Individuo implements Comparable<Individuo> {
+    private Double aptidao;
     //Cromossomo
-    private ArrayList<String> aptidao = new ArrayList();
+     private int[] individuo;
     //nosso cromossomo precisa do  valor e o peso de cada um dos GENES a serem carregados
-    private double pesos[];
-    private double valores[];
+    private double pesos[]={1,2,1,12,4};
+    private double valores[]={1,2,2,4,10};
     //o limite de peso que nossa mochila pode carregar
-    private double limitePeso;
+    private double limitePeso=15;
 
     public Individuo() {
+         individuo = new int[5];
+        do{
+            this.setIndividuo(individuo);
+        } while (!validar());
+        avaliar();
     }
-
-    public Individuo(double pesos[], double valores[],
-            double limitePeso) {
-        this();
-        this.pesos = new double[pesos.length];
-        this.valores = new double[valores.length];
-        
-        for (int i = 0; i < pesos.length; i++) {
-            this.pesos[i] = pesos[i];
-            this.valores[i] = valores[i];
-        }
-        this.limitePeso = limitePeso;
-        /* inicializar nosso cromossomo simplesmente fazendo um loop que
-        se repete N vezes (onde N é o tamanho do vetor de
-        valores passado como parâmetro) e em cada iteração
-        escolhe um ou zero, aleatoriamente*/
-        for (int i = 1; i <= pesos.length; i++) {
-            if (Math.random() < 0.5) {
-                aptidao.add("0");
-            } else {
-                aptidao.add("1");
-            }
+     private void avaliar() {
+         for (int i = 0; i < individuo.length; i++) {
+           if(individuo[i]==1)
+               aptidao+=valores[i];
+       }         
+    }
+    
+    public void setIndividuo(int[] individuo) {
+        for (int i = 0; i < pesos.length; i++){
+           individuo[i] = (Math.random() > 0.5)?1:0;
         }
     }
 
-    public ArrayList<String> getAptidao() {
+   private boolean validar(){
+       int soma=0;
+       for (int i = 0; i < individuo.length; i++) {
+           if(individuo[i]==1)
+               soma+=pesos[i];
+       }
+        return  soma <= limitePeso;
+    }
+   
+   
+   private void mutacao(int posicao) {
+        do {
+           individuo[posicao] = (individuo[posicao] == 1)?0:1;
+        } while (!validar());
+
+    }
+
+    public int[] getIndividuo() {
+        return individuo;
+    }
+    
+     public double getAptidao() {
         return aptidao;
     }
 
-     private void avaliar() {
-     
+   @Override
+    public int compareTo(Individuo i) {
+        return this.aptidao.compareTo(i.aptidao);
+    }
+     @Override
+    public String toString() {
+        return "Cromossomo " + Arrays.toString(individuo) + " Aptidao: " + aptidao + "\n";
     }
 
 
