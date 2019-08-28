@@ -2,6 +2,7 @@ package ag;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 /*representação do nosso cromossomo será uma string de bits na qual a
 posição i ser igual a 1 representa o fato de que o objeto de número i será colocado
@@ -9,8 +10,12 @@ dentro da mochila.
 
  */
 public class Individuo implements Comparable<Individuo> {
+
     private Double aptidao;
     //Cromossomo
+
+    private final Random random = new Random();
+
      private int[] individuo;
     //nosso cromossomo precisa do  valor e o peso de cada um dos GENES a serem carregados
     private double pesos[]={1,2,1,12,4};
@@ -25,7 +30,21 @@ public class Individuo implements Comparable<Individuo> {
         } while (!validar());
         avaliar();
     }
-     private void avaliar() {
+
+
+    public Individuo(int[] novoIndividuo){
+
+        individuo = novoIndividuo;
+
+        if(random.nextDouble() <= Genetico.TAXADEMUTACAO){
+            int posAleatoria = random.nextInt(individuo.length);
+            mutacao(posAleatoria);
+        }
+
+    }
+
+    public void avaliar() {
+        aptidao = -1.0;
          for (int i = 0; i < individuo.length; i++) {
            if(individuo[i]==1)
                aptidao+=valores[i];
@@ -38,7 +57,7 @@ public class Individuo implements Comparable<Individuo> {
         }
     }
 
-   private boolean validar(){
+   public boolean validar(){
        int soma=0;
        for (int i = 0; i < individuo.length; i++) {
            if(individuo[i]==1)
