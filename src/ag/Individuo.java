@@ -18,10 +18,10 @@ public class Individuo implements Comparable<Individuo> {
 
      private int[] individuo;
     //nosso cromossomo precisa do  valor e o peso de cada um dos GENES a serem carregados
-    private double pesos[]={5,2,1,12,4};
-    private double valores[]={1,2,2,4,1};
+    private double pesos[]=Principal.peso;
+    private double valores[]=Principal.valor;
     //o limite de peso que nossa mochila pode carregar
-    private double limitePeso=20;
+    private double limitePeso=Principal.limite;
 
     public Individuo() {
          individuo = new int[pesos.length];
