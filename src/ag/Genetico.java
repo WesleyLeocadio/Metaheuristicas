@@ -11,7 +11,7 @@ public class Genetico {
 
     static final boolean ELITISMO = true;
     static final boolean ESTAGNA = true; //se controla ou nao a estagnacao
-    static final double VALORESTAGNA = 200; //valor da estagnacao maxima
+    static final double VALORESTAGNA = 200;//valor da estagnacao maxima
 
     static final int TAMANHODAPOPULACAO = 100;
     static final int MAXIMODEGERACOES = 200;

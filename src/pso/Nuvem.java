@@ -20,12 +20,12 @@ public class Nuvem {
     private double valorMelhorPosicaoNuvem;
 
     public Nuvem(int qtdParticulas) {
-        System.out.println("foi");
+        //System.out.println("foi");
         particulas = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < Start.qtd; i++) {
             particulas.add(new Particula());
         }
-        melhorPosicaoNuvem = new int[5];
+        melhorPosicaoNuvem = new int[Start.qtd];
     }
 
     public void executarPSO() {
@@ -38,7 +38,7 @@ public class Nuvem {
             }
 
             // ordenar nuvem (ordem decrescente)
-           // Collections.sort(particulas, Collections.reverseOrder());
+           Collections.sort(particulas, Collections.reverseOrder());
             
 
             //Verifica se a particula com melhor solucao individual eh melhor que a da nuvem

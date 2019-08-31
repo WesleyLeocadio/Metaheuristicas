@@ -21,9 +21,9 @@ public class Particula implements Comparable<Particula>{
 
     private final double[] velocidade;
 
-    private double pesos[] = {1, 2, 12, 1, 4};
-    private double valores[] = {1, 2, 4, 2, 10};
-    private double limitePeso = 15;
+    private double pesos[] = Start.pesos;
+    private double valores[] = Start.valores;
+    private double limitePeso = Start.capacidade;
 
     public Particula() {
         posicaoAtual = new int[pesos.length];
@@ -36,7 +36,7 @@ public class Particula implements Comparable<Particula>{
             this.inicializarPosicao();
         } while (!validar());
         avaliar();
-        
+
         inicializarVelocidade();
 
     }
@@ -65,7 +65,7 @@ public class Particula implements Comparable<Particula>{
     public void avaliar() {
         valorPosicaoAtual = 0.0;
         for (int i = 0; i < posicaoAtual.length; i++) {
-            System.out.println("pronto");
+            //.out.println("pronto");
             if (posicaoAtual[i] == 1) {
                 valorPosicaoAtual += valores[i];
             }

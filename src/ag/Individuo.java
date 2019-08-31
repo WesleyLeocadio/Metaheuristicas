@@ -64,7 +64,7 @@ public class Individuo implements Comparable<Individuo> {
            if(individuo[i]==1)
                soma+=pesos[i];
        }
-        return  soma <= limitePeso;
+        return  soma < limitePeso;
     }
    
    private void mutacao(int posicao) {
