@@ -12,7 +12,7 @@ public class Principal {
     public static void main(String[] args) {
 
            Scanner sc1 = new Scanner(System.in);
-           System.out.println("informe a quantidade de itens:");
+           System.out.println("informe a quantidade de itens: ");
            limite=sc1.nextInt();
            peso = new double[limite];
            valor = new double[limite];
