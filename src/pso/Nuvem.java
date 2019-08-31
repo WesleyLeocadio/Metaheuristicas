@@ -33,7 +33,7 @@ public class Nuvem {
         for (int i = 0; i < 200; i++) {
 
             //verificar qual a melhor solucao da nuvem
-            for (Particula p : particulas) {
+            for(Particula p : particulas) {
                 p.avaliarSolucao();//Cada particula verifica se seu melhor mudou
             }
 
