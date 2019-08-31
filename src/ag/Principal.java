@@ -25,7 +25,7 @@ public class Principal {
         }
 
          System.out.println("Informe a capacidade de peso da mochila : ");
-        capacidade=sc1.nextInt();
+            capacidade=sc1.nextInt();
 
         Genetico Ag = new Genetico();
         Ag.Iniciar();
