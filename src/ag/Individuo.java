@@ -21,7 +21,7 @@ public class Individuo implements Comparable<Individuo> {
     private double pesos[]=Principal.peso;
     private double valores[]=Principal.valor;
     //o limite de peso que nossa mochila pode carregar
-    private double limitePeso=Principal.limite;
+    private double limitePeso=Principal.capacidade;
 
     public Individuo() {
          individuo = new int[pesos.length];
