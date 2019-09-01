@@ -6,15 +6,16 @@ import util.Time;
 import java.util.Scanner;
 
 public class Principal {
-          static double peso[];
-          static double valor[];
-          static int limite;
-          static int capacidade;
-
+          public static double peso[];
+          public static double valor[];
+          public static int limite;
+          public static int capacidade;
 
     public static void main(String[] args) {
 
-           Scanner sc1 = new Scanner(System.in);
+
+        /*
+          Scanner sc1 = new Scanner(System.in);
            System.out.print("Informe a quantidade de Itens: ");
            limite = sc1.nextInt();
            System.out.print("\n");
@@ -32,6 +33,8 @@ public class Principal {
          System.out.println("Informe a capacidade de peso da mochila : ");
          capacidade=sc1.nextInt();
 
+         */
+
 
         Genetico Ag = new Genetico();
         Time tempo = new Time();
@@ -40,5 +43,21 @@ public class Principal {
         Runtime rt = Runtime.getRuntime();
         System.out.println("Uso de memória  = " +(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M");
 
+    }
+
+    public static double[] getPeso() {
+        return peso;
+    }
+
+    public static double[] getValor() {
+        return valor;
+    }
+
+    public static int getCapacidade() {
+        return capacidade;
+    }
+
+    public static int getLimite() {
+        return limite;
     }
 }

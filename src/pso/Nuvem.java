@@ -20,7 +20,7 @@ public class Nuvem {
     private double valorMelhorPosicaoNuvem;
 
     public Nuvem(int qtdParticulas) {
-        //System.out.println("foi");
+       //System.out.println("foi");
         particulas = new ArrayList<>();
         for (int i = 0; i < Start.qtd; i++) {
             particulas.add(new Particula());

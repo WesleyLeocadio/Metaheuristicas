@@ -15,10 +15,10 @@ import java.util.Scanner;
  */
 public class Start {
 
-    static double pesos[];
-    static double valores[];
-    static int qtd;
-    static int capacidade;
+    public static double pesos[];
+    public static double valores[];
+    public static int qtd;
+    public static int capacidade;
 
     public static void main(String[] args) {
 
@@ -44,9 +44,12 @@ public class Start {
 
 
 
-        Nuvem nuvemParticulas = new Nuvem(qtd);
+        Nuvem nuvemParticulas = new Nuvem(100);
         Time tempo = new Time();
         nuvemParticulas.executarPSO();
+
+        System.out.println(nuvemParticulas.getMelhorSolucaoNuvem());
+
         System.out.println("\nTempo de execução: " +  tempo );
 
         Runtime rt = Runtime.getRuntime();

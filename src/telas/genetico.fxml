@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorGenetico" nodeOrientation="RIGHT_TO_LEFT" prefHeight="540.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorGenetico">
+   <children>
+      <VBox alignment="CENTER" prefHeight="540.0" prefWidth="740.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="630.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnItens" mnemonicParsing="false" onAction="#informarQuantidade" style="-fx-background-color: #00FF00;" text="OK" />
+                  <TextField fx:id="qtdItens" />
+                  <Label text="Informe a quantidade de itens:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="740.0">
+               <children>
+                  <Label fx:id="labelCont" text="Dados do Item X">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="630.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="valorItem" />
+                  <Label text="Informe o valor do item:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="pesoItem" />
+                  <Label text="Informe o peso do item:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btDadosItens" minHeight="35.0" mnemonicParsing="false" onAction="#addItem" style="-fx-background-color: #00FF00;" text="Cadastrar Item" textFill="#fffefe">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: ;">
+               <children>
+                  <Label text="Capacidade da Mochila">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="capacidadeMochila" />
+                  <Label text="Digite a capacidade:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnGerar" minHeight="35.0" mnemonicParsing="false" onAction="#gerarGenetico" style="-fx-background-color: #00FF00;" text="Gerar melhor combinaçao" textFill="#fffefe">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

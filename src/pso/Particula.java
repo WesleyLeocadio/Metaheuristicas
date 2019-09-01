@@ -26,6 +26,7 @@ public class Particula implements Comparable<Particula>{
     private double limitePeso = Start.capacidade;
 
     public Particula() {
+
         posicaoAtual = new int[pesos.length];
         melhorPosicao = new int[pesos.length];
         velocidade = new double[pesos.length];

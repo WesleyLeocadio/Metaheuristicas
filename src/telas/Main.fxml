@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControladorPrincipal">
+   <top>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelTroca" text="Algoritimos Metaruristicos - Problema da Mochila" textAlignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="120.0" spacing="3.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btInicio" maxHeight="100.0" maxWidth="120.0" minHeight="40.0" mnemonicParsing="false" onAction="#inicio" style="-fx-background-color: #fff;" text="Inicio">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btGenetico" maxHeight="100.0" maxWidth="120.0" minHeight="40.0" mnemonicParsing="false" onAction="#testeGenetico" style="-fx-background-color: #fff;" text="Genetico">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btPso" maxHeight="80.0" maxWidth="120.0" minHeight="40.0" mnemonicParsing="false" onAction="#testePso" style="-fx-background-color: #fff;" text="PSO">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btResultado" maxHeight="100.0" maxWidth="120.0" minHeight="40.0" mnemonicParsing="false" style="-fx-background-color: #fff;" text="Resultados">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btResultado1" layoutX="10.0" layoutY="139.0" maxHeight="100.0" maxWidth="120.0" minHeight="40.0" mnemonicParsing="false" onAction="#sair" style="-fx-background-color: #fff;" text="Sair" textFill="#e40d0d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="anchorInicial" nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="315.0" layoutY="220.0" text="Realize seus testes">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </center>
+</BorderPane>
