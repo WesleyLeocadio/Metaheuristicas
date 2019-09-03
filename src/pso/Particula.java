@@ -60,7 +60,7 @@ public class Particula implements Comparable<Particula>{
                 soma += pesos[i];
             }
         }
-        return soma <= limitePeso;
+        return soma < limitePeso;
     }
 
     public void avaliar() {
@@ -83,6 +83,13 @@ public class Particula implements Comparable<Particula>{
     //Verifica se o valor da posicao atual eh melhor que o valor da melhor solucao ja encontrada
     //Se for, substitui
     public void avaliarSolucao() {
+
+        valorPosicaoAtual = 0.0;
+        for (int i = 0; i < posicaoAtual.length; i++) {
+            if(posicaoAtual[i]==1)
+                valorPosicaoAtual += valores[i];
+        }
+
         if (valorPosicaoAtual > valorMelhorPosicao) {
             valorMelhorPosicao = valorPosicaoAtual;
             System.arraycopy(posicaoAtual, 0, melhorPosicao, 0, posicaoAtual.length);
@@ -145,6 +152,7 @@ public class Particula implements Comparable<Particula>{
    //Compara as particulas pela melhor solucao que cada uma tem
     @Override
     public int compareTo(Particula o) {
+        /*
         if (valorMelhorPosicao != o.getValorMelhorPosicao()) {
             return valorMelhorPosicao.compareTo(o.getValorMelhorPosicao());
         } else {
@@ -152,6 +160,9 @@ public class Particula implements Comparable<Particula>{
             Integer anothertam = o.getAtributos().size();
             return thistam.compareTo(anothertam);
         }
+
+         */
+        return valorMelhorPosicao.compareTo(o.getValorMelhorPosicao());
     }
 
 

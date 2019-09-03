@@ -77,7 +77,6 @@ public class ControladorPso implements Initializable {
         Time tempo = new Time();
         nuvemParticulas.executarPSO();
 
-        System.out.println(nuvemParticulas.getMelhorSolucaoNuvem());
         System.out.println("\nTempo de execução: " +  tempo );
         Runtime rt = Runtime.getRuntime();
         System.out.println("Uso de memória  = " +(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M");

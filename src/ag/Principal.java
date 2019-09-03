@@ -15,7 +15,7 @@ public class Principal {
     public static void main(String[] args) {
 
 
-        /*
+
           Scanner sc1 = new Scanner(System.in);
            System.out.print("Informe a quantidade de Itens: ");
            limite = sc1.nextInt();
@@ -41,7 +41,6 @@ public class Principal {
         System.out.println("\nTempo de execução: " +  tempo );
         Runtime rt = Runtime.getRuntime();
         System.out.println("Uso de memória  = " +(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M");
-         */
 
     }
 

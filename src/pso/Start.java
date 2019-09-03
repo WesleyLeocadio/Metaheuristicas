@@ -5,7 +5,10 @@
  */
 package pso;
 
+import util.Time;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -20,7 +23,7 @@ public class Start {
 
     public static void main(String[] args) {
 
-        /*
+
         Scanner sc1 = new Scanner(System.in);
         System.out.print("Informe a quantidade de Itens: ");
         qtd = sc1.nextInt();
@@ -47,13 +50,11 @@ public class Start {
         Time tempo = new Time();
         nuvemParticulas.executarPSO();
 
-        System.out.println(nuvemParticulas.getMelhorSolucaoNuvem());
-
         System.out.println("\nTempo de execução: " +  tempo );
 
         Runtime rt = Runtime.getRuntime();
         System.out.println("Uso de memória  = " +(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M");
-        */
+
     }
 
     public static ArrayList<String> retornarV(){

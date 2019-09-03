@@ -59,6 +59,7 @@ public class Nuvem {
         System.out.println("Iteracao " + iteracao + "| Melhor " + valorMelhorPosicaoNuvem);
     }
 
+    /*
     public ArrayList<Integer> getMelhorSolucaoNuvem() {
         ArrayList<Integer> selecionados = new ArrayList<>();
         for (int i = 0; i < melhorPosicaoNuvem.length; i++) {
@@ -68,5 +69,6 @@ public class Nuvem {
         }
         return selecionados;
     }
+     */
 
 }

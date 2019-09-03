@@ -36,9 +36,9 @@ public class Individuo implements Comparable<Individuo> {
 
         individuo = novoIndividuo;
 
-        if(random.nextDouble() <= Genetico.TAXADEMUTACAO){
-            int posAleatoria = random.nextInt(individuo.length);
-            mutacao(posAleatoria);
+        if (random.nextDouble() <= Genetico.TAXADEMUTACAO) {
+                int posAleatoria = random.nextInt(individuo.length);
+                mutacao(posAleatoria);
         }
         avaliar();
 
@@ -47,9 +47,11 @@ public class Individuo implements Comparable<Individuo> {
     public void avaliar() {
         aptidao = 0.0;
          for (int i = 0; i < individuo.length; i++) {
-           if(individuo[i]==1)
+           if(individuo[i] == 1 ) {
                aptidao += valores[i];
-       }         
+           }
+       }
+        //System.out.println("Aptidão: " + aptidao);
     }
     
     public void setIndividuo(int[] individuo) {
@@ -63,8 +65,9 @@ public class Individuo implements Comparable<Individuo> {
        for (int i = 0; i < individuo.length; i++) {
            if(individuo[i]==1)
                soma+=pesos[i];
+
        }
-        return  soma < limitePeso;
+        return  soma <= limitePeso;
     }
    
    private void mutacao(int posicao) {

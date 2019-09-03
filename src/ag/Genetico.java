@@ -10,11 +10,11 @@ public class Genetico {
     static final double TAXADECRUZAMENTO = 0.9;
 
     static final boolean ELITISMO = true;
-    static final boolean ESTAGNA = true; //se controla ou nao a estagnacao
+    static final boolean ESTAGNA = false; //se controla ou nao a estagnacao
     static final double VALORESTAGNA = 200;//valor da estagnacao maxima
 
     static final int TAMANHODAPOPULACAO = 100;
-    static final int MAXIMODEGERACOES = 200;
+    static final int MAXIMODEGERACOES = 200; //200
 
     private Populacao populacao;
     private final Random r;
@@ -36,7 +36,7 @@ public class Genetico {
         do {
 
             populacao = gerarPopulacao();
-            System.out.println("Geracao " + geracao + "| Melhor " + populacao.getIndividuo(0));
+            System.out.println("Geracao " + geracao + "| Melhor " + populacao.getIndividuo(1));
 
             if (ESTAGNA) {
                 contaEstagnacao();
@@ -53,7 +53,7 @@ public class Genetico {
         Populacao novaPopulacao = new Populacao();
 
         if (ELITISMO) {
-            novaPopulacao.setIndividuo(populacao.getIndividuo(0));
+            novaPopulacao.setIndividuo(populacao.getIndividuo(1));
         }
         // insere novos individuos na nova populacao, ate atingir o tamanho maximo
         while (novaPopulacao.getNumIndividuos() <= TAMANHODAPOPULACAO) {
