@@ -23,15 +23,6 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="740.0">
-               <children>
-                  <Label fx:id="labelCont" text="Dados do Item X">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="630.0" spacing="10.0">
                <children>
                   <TextField fx:id="valorItem" />
@@ -59,6 +50,24 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="740.0">
+               <children>
+                  <Label fx:id="labelValores" text="VALORES:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="740.0">
+               <children>
+                  <Label fx:id="labelPesos" text="PESOS: ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: ;">

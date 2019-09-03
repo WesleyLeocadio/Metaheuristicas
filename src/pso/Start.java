@@ -5,9 +5,7 @@
  */
 package pso;
 
-import util.Time;
-
-import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,6 +20,7 @@ public class Start {
 
     public static void main(String[] args) {
 
+        /*
         Scanner sc1 = new Scanner(System.in);
         System.out.print("Informe a quantidade de Itens: ");
         qtd = sc1.nextInt();
@@ -54,6 +53,25 @@ public class Start {
 
         Runtime rt = Runtime.getRuntime();
         System.out.println("Uso de memória  = " +(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M");
-
+        */
     }
+
+    public static ArrayList<String> retornarV(){
+        ArrayList<String> resultados = new ArrayList<String>();
+        for(int i = 0; i < valores.length; i++){
+            resultados.add(String.valueOf(valores[i]));
+        }
+        //System.out.println(resultados);
+        return resultados;
+    }
+
+    public static ArrayList<String> retornarP(){
+        ArrayList<String> resultados = new ArrayList<String>();
+        for(int i = 0; i < pesos.length; i++){
+            resultados.add(String.valueOf(pesos[i]));
+        }
+        //System.out.println(resultados);
+        return resultados;
+    }
+
 }

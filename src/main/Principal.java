@@ -28,7 +28,7 @@ public class Principal extends Application {
          */
         
         stage.setScene(scene);
-        stage.setTitle("Gerenciar Biblioteca");
+        stage.setTitle("Testes de Metaheurísticas");
         stage.show();
     }
 

@@ -3,6 +3,7 @@ package ag;
 import pso.Nuvem;
 import util.Time;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
@@ -33,8 +34,6 @@ public class Principal {
          System.out.println("Informe a capacidade de peso da mochila : ");
          capacidade=sc1.nextInt();
 
-         */
-
 
         Genetico Ag = new Genetico();
         Time tempo = new Time();
@@ -42,15 +41,36 @@ public class Principal {
         System.out.println("\nTempo de execução: " +  tempo );
         Runtime rt = Runtime.getRuntime();
         System.out.println("Uso de memória  = " +(rt.totalMemory()-rt.freeMemory())/(1000*1000)+"M");
+         */
 
     }
 
     public static double[] getPeso() {
+
         return peso;
     }
 
-    public static double[] getValor() {
+    public static double[] getValor()
+    {
         return valor;
+    }
+
+    public static ArrayList<String> retornarValores(){
+        ArrayList<String> resultados = new ArrayList<String>();
+        for(int i = 0; i < valor.length; i++){
+            resultados.add(String.valueOf(valor[i]));
+        }
+        //System.out.println(resultados);
+        return resultados;
+    }
+
+    public static ArrayList<String> retornarPesos(){
+        ArrayList<String> resultados = new ArrayList<String>();
+        for(int i = 0; i < peso.length; i++){
+            resultados.add(String.valueOf(peso[i]));
+        }
+        //System.out.println(resultados);
+        return resultados;
     }
 
     public static int getCapacidade() {

@@ -22,7 +22,7 @@ public class ControladorGenetico implements Initializable {
     private TextField qtdItens, valorItem, pesoItem, capacidadeMochila;
 
     @FXML
-    private Label labelCont;
+    private Label labelValores, labelPesos;
 
     int cont = 0;
 
@@ -45,8 +45,6 @@ public class ControladorGenetico implements Initializable {
 
         Principal.valor = new double[Principal.limite];
         Principal.peso = new double[Principal.limite];
-
-        labelCont.setText("Quantidade de Itens: " + quantidade);
     }
 
     @FXML
@@ -60,6 +58,9 @@ public class ControladorGenetico implements Initializable {
 
         cont++;
         limparTextFild();
+
+        labelValores.setText("Valores: " + "" + Principal.retornarValores() + "");
+        labelPesos.setText("Pesos: " + "" + Principal.retornarPesos() + "");
     }
 
     @FXML

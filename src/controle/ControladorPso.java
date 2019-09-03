@@ -24,7 +24,7 @@ public class ControladorPso implements Initializable {
     private TextField qtdItens, valorItem, pesoItem, capacidadeMochila;
 
     @FXML
-    private Label labelCont;
+    private Label labelValores, labelPesos;
 
     int cont = 0;
 
@@ -48,7 +48,7 @@ public class ControladorPso implements Initializable {
         Start.valores = new double[Start.qtd];
         Start.pesos = new double[Start.qtd];
 
-        labelCont.setText("Quantidade de Itens: " + quantidade);
+        //labelCont.setText("Quantidade de Itens: " + quantidade);
     }
 
     @FXML
@@ -62,6 +62,9 @@ public class ControladorPso implements Initializable {
 
         cont++;
         limparTextFild();
+
+        labelValores.setText("Valores: " + "" + Start.retornarV() + "");
+        labelPesos.setText("Pesos: " + "" + Start.retornarP() + "");
     }
 
     @FXML
