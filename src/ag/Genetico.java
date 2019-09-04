@@ -36,7 +36,7 @@ public class Genetico {
         do {
 
             populacao = gerarPopulacao();
-            System.out.println("Geracao " + geracao + "| Melhor " + populacao.getIndividuo(1));
+            System.out.println("Geracao " + geracao + "| Melhor " + populacao.getIndividuo(0));
 
             if (ESTAGNA) {
                 contaEstagnacao();
@@ -53,7 +53,7 @@ public class Genetico {
         Populacao novaPopulacao = new Populacao();
 
         if (ELITISMO) {
-            novaPopulacao.setIndividuo(populacao.getIndividuo(1));
+            novaPopulacao.setIndividuo(populacao.getIndividuo(0));
         }
         // insere novos individuos na nova populacao, ate atingir o tamanho maximo
         while (novaPopulacao.getNumIndividuos() <= TAMANHODAPOPULACAO) {
